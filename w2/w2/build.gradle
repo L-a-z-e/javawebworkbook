@@ -23,13 +23,28 @@ tasks.withType(JavaCompile) {
 
 dependencies {
     compileOnly('javax.servlet:javax.servlet-api:4.0.1')
-    implementation('org.glassfish.jersey.containers:jersey-container-servlet:2.34')
-    implementation('org.glassfish.jersey.media:jersey-media-json-jackson:2.34')
-    implementation('org.glassfish.jersey.inject:jersey-cdi2-se:2.34')
-    implementation('org.jboss.weld.se:weld-se-core:3.1.9.Final')
 
     testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
+
+    implementation group: 'jstl', name: 'jstl', version: '1.2'
+
+    implementation 'org.mariadb.jdbc:mariadb-java-client:3.0.4'
+
+    compileOnly 'org.projectlombok:lombok:1.18.24'
+    annotationProcessor 'org.projectlombok:lombok:1.18.24'
+
+    testCompileOnly 'org.projectlombok:lombok:1.18.24'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.24'
+
+    implementation group: 'com.zaxxer', name: 'HikariCP', version: '5.0.0'
+
+    implementation group: 'org.modelmapper', name: 'modelmapper', version: '3.0.0'
+
+    implementation group: 'org.apache.logging.log4j', name: 'log4j-core', version: '2.17.2'
+    implementation group: 'org.apache.logging.log4j', name: 'log4j-api', version: '2.17.2'
+    implementation group: 'org.apache.logging.log4j', name: 'log4j-slf4j-impl', version: '2.17.2'
+
 }
 
 test {
