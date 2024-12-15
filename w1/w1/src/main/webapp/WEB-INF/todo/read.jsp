@@ -7,13 +7,26 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-<head>
-    <title>Title</title>
-</head>
-<body>
-    <div>${todoDTO.tno}</div>
-    <div>${todoDTO.title}</div>
-    <div>${todoDTO.dueDate}</div>
-    <div>${todoDTO.finished}</div>
-</body>
+    <head>
+        <title>Todo Read</title>
+    </head>
+    <body>
+        <div>
+            <input type="text" name="tno" value="${todoDTO.tno}" readonly>
+        </div>
+        <div>
+            <input type="text" name="title" value="${todoDTO.title}" readonly>
+        </div>
+        <div>
+            <input type="date" name="dueDate" value="${todoDTO.dueDate}">
+        </div>
+        <div>
+            <input type="checkbox" name="finished" ${todoDTO.finished ? "checked" : ""} readonly>
+        </div>
+        <div>
+            <a href="/todo/modify?tno=${todoDTO.tno}">Modify/Remove</a>
+            <a href="/todo/list">List</a>
+        </div>
+
+    </body>
 </html>

@@ -13,10 +13,14 @@
 </head>
 <body>
     <h1>List Page</h1>
-    ${todoList}
     <ul>
-        <c:forEach var="dto" items="${todoList}">
-            <li>${dto}</li>
+        <c:forEach items="${todoList}" var="todoDto">
+            <li>
+                <apan><a href="/todo/read?tno=${todoDto.tno}">${todoDto.tno}</a></apan>
+                <span>${todoDto.title}</span>
+                <span>${todoDto.dueDate}</span>
+                <span>${todoDto.finished ? "DONE" : "NOT YET"}</span>
+            </li>
         </c:forEach>
     </ul>
 </body>
