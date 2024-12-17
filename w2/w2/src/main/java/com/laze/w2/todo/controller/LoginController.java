@@ -1,18 +1,20 @@
-package com.laze.w2.todo;
+package com.laze.w2.todo.controller;
 
+import com.laze.w2.todo.domain.MemberDTO;
+import com.laze.w2.todo.service.MemberService;
 import lombok.extern.log4j.Log4j2;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
+import javax.servlet.http.*;
 import java.io.IOException;
+import java.util.UUID;
 
 @WebServlet(name = "loginController", urlPatterns = "/login")
 @Log4j2
 public class LoginController extends HttpServlet {
+
+    private MemberService memberService;
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -29,14 +31,42 @@ public class LoginController extends HttpServlet {
 
         String mid = req.getParameter("mid");
         String mpw = req.getParameter("mpw");
-        String str = mid+mpw;
+        String auto = req.getParameter("auto");
 
-        HttpSession session = req.getSession();
+        boolean rememberMe = auto != null && auto.equals("on");
 
-        session.setAttribute("loginInfo", str);
+        if (rememberMe) {
+            String uuid = UUID.randomUUID().toString();
+        }
 
-        resp.sendRedirect("/todo/list");
+        try{
+            MemberDTO memberDTO = memberService.INSTANCE.login(mid, mpw);
+
+            if(rememberMe){
+
+                String uuid = UUID.randomUUID().toString();
+
+                MemberService.INSTANCE.updateUuid(mid, uuid);
+                memberDTO.setUuid(uuid);
+
+                Cookie rememberCookie = new Cookie("remember-me", uuid);
+                rememberCookie.setMaxAge(60 * 60 * 24 * 7);
+                rememberCookie.setPath("/");
+
+                resp.addCookie(rememberCookie);
+
+            }
+            log.info("memberDTO (before session): {}", memberDTO); // 세션 저장 전 memberDTO 내용 출력
+
+            HttpSession session = req.getSession();
+            session.setAttribute("loginInfo", memberDTO);
+
+            resp.sendRedirect("/todo/list");
+
+        } catch (Exception e) {
+            resp.sendRedirect("/login?result=error");
+        }
 
     }
-    
+
 }

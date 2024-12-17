@@ -1,4 +1,4 @@
-package com.laze.w2.todo.dto;
+package com.laze.w2.todo.domain;
 
 import lombok.*;
 

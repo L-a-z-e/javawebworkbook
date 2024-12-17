@@ -2,7 +2,7 @@ package com.laze.w2.todo.service;
 
 import com.laze.w2.todo.dao.TodoDAO;
 import com.laze.w2.todo.dto.TodoDTO;
-import com.laze.w2.todo.dto.TodoVO;
+import com.laze.w2.todo.domain.TodoVO;
 import com.laze.w2.todo.util.MapperUtil;
 import lombok.extern.log4j.Log4j2;
 import org.modelmapper.ModelMapper;

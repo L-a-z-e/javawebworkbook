@@ -1,6 +1,6 @@
 package com.laze.w2.todo.dao;
 
-import com.laze.w2.todo.dto.TodoVO;
+import com.laze.w2.todo.domain.TodoVO;
 import lombok.Cleanup;
 
 import java.sql.Connection;

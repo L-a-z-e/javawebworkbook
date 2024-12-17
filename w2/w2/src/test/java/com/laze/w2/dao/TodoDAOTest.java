@@ -1,7 +1,7 @@
 package com.laze.w2.dao;
 
 import com.laze.w2.todo.dao.TodoDAO;
-import com.laze.w2.todo.dto.TodoVO;
+import com.laze.w2.todo.domain.TodoVO;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

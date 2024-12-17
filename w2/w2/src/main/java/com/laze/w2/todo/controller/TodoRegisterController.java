@@ -1,4 +1,4 @@
-package com.laze.w2.todo;
+package com.laze.w2.todo.controller;
 
 import com.laze.w2.todo.dto.TodoDTO;
 import com.laze.w2.todo.service.TodoService;

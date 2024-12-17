@@ -1,4 +1,4 @@
-package com.laze.w2.todo;
+package com.laze.w2.todo.controller;
 
 import com.laze.w2.todo.service.TodoService;
 import lombok.extern.log4j.Log4j2;
