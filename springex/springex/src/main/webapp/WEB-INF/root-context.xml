@@ -5,11 +5,9 @@
        xmlns:mybatis="http://mybatis.org/schema/mybatis-spring"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring.xsd">
 
-    <context:component-scan base-package="com.laze.springex.sample"/>
-
     <bean id="hikariConfig" class="com.zaxxer.hikari.HikariConfig">
         <property name="driverClassName" value="org.mariadb.jdbc.Driver"/>
-        <property name="jdbcUrl" value="jdbc:mariadb://localhost:3306/webdb"/>
+        <property name="jdbcUrl" value="jdbc:mariadb://localhost:3306/javaworkbook"/>
         <property name="username" value="webuser"/>
         <property name="password" value="webuser"/>
         <property name="dataSourceProperties">
@@ -29,6 +27,8 @@
         <property name="dataSource" ref="dataSource"/>
         <property name="mapperLocations" value="classpath:/mappers/**/*.xml"/>
     </bean>
+
+    <context:component-scan base-package="com.laze.springex.config"/>
 
     <mybatis:scan base-package="com.laze.springex.mapper"></mybatis:scan>
 </beans>
