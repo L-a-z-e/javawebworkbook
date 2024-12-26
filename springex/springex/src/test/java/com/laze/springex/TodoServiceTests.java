@@ -1,5 +1,7 @@
 package com.laze.springex;
 
+import com.laze.springex.dto.PageRequestDTO;
+import com.laze.springex.dto.PageResponseDTO;
 import com.laze.springex.dto.TodoDTO;
 import com.laze.springex.service.TodoService;
 import lombok.extern.log4j.Log4j2;
@@ -30,4 +32,17 @@ public class TodoServiceTests {
 
         todoService.register(todoDTO);
     }
+
+    @Test
+    public void testPaging() {
+
+        PageRequestDTO pageRequestDTO = PageRequestDTO.builder().page(1).size(10).build();
+
+        PageResponseDTO<TodoDTO> responseDTO = todoService.getList(pageRequestDTO);
+
+        log.info(responseDTO);
+
+        responseDTO.getDtoList().stream().forEach(log::info);
+    }
+
 }

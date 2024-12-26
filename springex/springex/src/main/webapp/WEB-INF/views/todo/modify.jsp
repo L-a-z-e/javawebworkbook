@@ -29,7 +29,7 @@
 
         <div class="input-group mb-3">
             <span class="input-group-text">DueDate</span>
-            <input type="date" name="dueDte" class="form-control" value=<c:out value="${dto.dueDate}"/> >
+            <input type="date" name="dueDate" class="form-control" value=<c:out value="${dto.dueDate}"/> >
         </div>
 
         <div class="input-group mb-3">
@@ -49,6 +49,8 @@
                 <button type="reset" class="btn btn-secondary">List</button>
             </div>
         </div>
+        <input type="hidden" name="page" value="${pageRequestDTO.page}"/>
+        <input type="hidden" name="size" value="${pageRequestDTO.size}"/>
     </form>
 
         <script>
@@ -73,7 +75,7 @@
             }, false)
 
             document.querySelector(".btn-secondary").addEventListener("click", function(e){
-                self.location = "/todo/list";
+                self.location = `/todo/list?${pageRequestDTO.link}`;
             }, false)
         </script>
 

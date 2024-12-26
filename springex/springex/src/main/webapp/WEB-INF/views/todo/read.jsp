@@ -44,17 +44,17 @@
         <div class="my-4">
             <div class="float-end">
                 <button type="submit" class="btn btn-primary">Modify</button>
-                <button type="reset" class="btn btn-secondary">Reset</button>
+                <button type="reset" class="btn btn-secondary">List</button>
             </div>
         </div>
 
         <script>
             document.querySelector(".btn-primary").addEventListener("click", function(e){
-                self.location = "/todo/modify?tno="+${dto.tno}
+                self.location = `/todo/modify?tno=+${dto.tno}&${pageRequestDTO.link}`;
             }, false)
 
             document.querySelector(".btn-secondary").addEventListener("click", function(e){
-                self.location = "/todo/list";
+                self.location = `/todo/list?${pageRequestDTO.link}`;
             }, false)
         </script>
 
