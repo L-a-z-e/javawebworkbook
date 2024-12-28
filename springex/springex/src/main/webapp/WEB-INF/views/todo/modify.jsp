@@ -49,8 +49,8 @@
                 <button type="reset" class="btn btn-secondary">List</button>
             </div>
         </div>
-        <input type="hidden" name="page" value="${pageRequestDTO.page}"/>
-        <input type="hidden" name="size" value="${pageRequestDTO.size}"/>
+<%--        <input type="hidden" name="page" value="${pageRequestDTO.page}"/>--%>
+<%--        <input type="hidden" name="size" value="${pageRequestDTO.size}"/>--%>
     </form>
 
         <script>
@@ -61,7 +61,7 @@
             document.querySelector(".btn-danger").addEventListener("click", function(e){
                 e.preventDefault()
                 e.stopPropagation()
-                formObj.action = "/todo/remove"
+                formObj.action = `/todo/remove?${pageRequestDTO.link}`
                 formObj.method = "post"
                 formObj.submit()
             }, false)

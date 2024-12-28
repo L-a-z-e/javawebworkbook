@@ -120,7 +120,10 @@
                 }
                 const num = target.getAttribute("data-num")
 
-                self.location = `/todo/list?page=\${num}`
+                const formObj = document.querySelector("form")
+
+                formObj.innerHTML += `<input type='hidden' name='page' value='\${num}'>`
+                formObj.submit();
             }, false)
 
             document.querySelector(".clearBtn").addEventListener("click", function(e) {
