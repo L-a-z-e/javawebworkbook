@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.laze.bootex.DataSourceTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-12-30T13:45:51" hostname="Lazeui-MacBookPro.local" time="0.278">
+  <properties/>
+  <testcase name="testConnection()" classname="com.laze.bootex.DataSourceTests" time="0.278"/>
+  <system-out><![CDATA[22:45:50.506 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.laze.bootex.DataSourceTests]: DataSourceTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+22:45:50.542 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.laze.bootex.BootexApplication for test class com.laze.bootex.DataSourceTests
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.4.1)
+
+2024-12-30T22:45:50.701+09:00  INFO 94345 --- [bootex] [    Test worker] com.laze.bootex.DataSourceTests          : Starting DataSourceTests using Java 17.0.12 with PID 94345 (started by laze in /Users/laze/Laze/Dev/Java/bootex)
+2024-12-30T22:45:50.702+09:00 DEBUG 94345 --- [bootex] [    Test worker] com.laze.bootex.DataSourceTests          : Running with Spring Boot v3.4.1, Spring v6.2.1
+2024-12-30T22:45:50.702+09:00  INFO 94345 --- [bootex] [    Test worker] com.laze.bootex.DataSourceTests          : No active profile set, falling back to 1 default profile: "default"
+2024-12-30T22:45:50.939+09:00  INFO 94345 --- [bootex] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-12-30T22:45:50.946+09:00  INFO 94345 --- [bootex] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 4 ms. Found 0 JPA repository interfaces.
+2024-12-30T22:45:51.102+09:00  INFO 94345 --- [bootex] [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-12-30T22:45:51.128+09:00  INFO 94345 --- [bootex] [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.4.Final
+2024-12-30T22:45:51.141+09:00  INFO 94345 --- [bootex] [    Test worker] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-12-30T22:45:51.242+09:00  INFO 94345 --- [bootex] [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-12-30T22:45:51.252+09:00  INFO 94345 --- [bootex] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-12-30T22:45:51.284+09:00  INFO 94345 --- [bootex] [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.mariadb.jdbc.Connection@40bf0e15
+2024-12-30T22:45:51.285+09:00  INFO 94345 --- [bootex] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-12-30T22:45:51.306+09:00  INFO 94345 --- [bootex] [    Test worker] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 11.5.2
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2024-12-30T22:45:51.421+09:00  INFO 94345 --- [bootex] [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-12-30T22:45:51.423+09:00  INFO 94345 --- [bootex] [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-12-30T22:45:51.482+09:00  WARN 94345 --- [bootex] [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-12-30T22:45:51.673+09:00  INFO 94345 --- [bootex] [    Test worker] com.laze.bootex.DataSourceTests          : Started DataSourceTests in 1.064 seconds (process running for 1.489)
+2024-12-30T22:45:51.955+09:00  INFO 94345 --- [bootex] [    Test worker] com.laze.bootex.DataSourceTests          : HikariProxyConnection@1792068931 wrapping org.mariadb.jdbc.Connection@40bf0e15
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
