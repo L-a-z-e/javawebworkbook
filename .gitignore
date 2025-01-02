@@ -1,0 +1,7 @@
+/bootex/.gradle
+/bootex/.idea
+/bootex/build
+*.log
+*.class
+*.jar
+*.iml
