@@ -1,6 +1,9 @@
 package com.laze.bootex.repository;
 
 import com.laze.bootex.domain.Board;
+import com.laze.bootex.dto.BoardDTO;
+import com.laze.bootex.dto.PageRequestDTO;
+import com.laze.bootex.dto.PageResponseDTO;
 import lombok.extern.log4j.Log4j2;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -96,7 +99,7 @@ public class BoardRepositoryTests {
         String keyword = "1";
 
         Pageable pageable = PageRequest.of(0,10, Sort.by("bno").descending());
-        Page<Board> result = boardRepository.serachAll(types, keyword, pageable);
+        Page<Board> result = boardRepository.searchAll(types, keyword, pageable);
 
     }
 
@@ -107,7 +110,7 @@ public class BoardRepositoryTests {
         String keyword = "1";
 
         Pageable pageable = PageRequest.of(0,10, Sort.by("bno").descending());
-        Page<Board> result = boardRepository.serachAll(types, keyword, pageable);
+        Page<Board> result = boardRepository.searchAll(types, keyword, pageable);
 
         log.info(result.getTotalPages());
         log.info(result.getSize());
